@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicial</title>
+ 
+</head>
+<body>
+    <div> 
+        <h1>Bem vindo(a) a está seção.</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="page-header text-center py-3">
+        <h1>Candidatos</h1>
+    </div>
+    <table class="table caption-top">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Número</th>
+                <th scope="col">Partido</th>
+            </tr>
+        </thead>
+        {% for candidato in candidatos %}
+        <tbody>
+            <tr>
+                <td>{{ candidato.nome }}</td>
+                <td>{{ candidato.foto }}</td>
+                <td>{{ candidato.numero }}</td>
+                <td>{{ candidato.partido }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <div>
+        <a href="{% url 'urnaForm'%}">
+            <input type="button" name="Proseguir Para a Seção">Proseguir Para a Seção
+        </a>
+    </div>
+</body>
+</html>
